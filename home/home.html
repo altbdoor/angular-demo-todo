@@ -1,0 +1,48 @@
+<div class="container" ng-controller="homeController as homeCtrl">
+	<form id="home-form" name="homeForm" ng-submit="homeCtrl.addTask(homeForm)" novalidate>
+		<div class="input-group">
+			<input type="text" class="form-control" placeholder="Write a task" required ng-model="homeForm.input.title">
+			<span class="input-group-btn">
+				<button class="btn btn-default">
+					<i class="glyphicon glyphicon-plus"></i>
+					<span class="hidden-xs">Add Task</span>
+				</button>
+			</span>
+		</div>
+	</form>
+	
+	<h4 id="home-list-empty" class="text-center" ng-if="homeCtrl.taskList.length == 0">
+		No tasks found!<br>
+		<small>Start by adding some task into the list</small>
+	</h4>
+			
+	<ul id="home-list" class="list-unstyled">
+		<li ng-repeat="i in homeCtrl.taskList">
+			<div class="row">
+				<div class="col-xs-9 col-sm-8">
+					<b>{{ i.title }}</b><br>
+					<small class="home-list-task-description text-muted"><!--
+						-->{{ i.description | limitTo:100 }}<!--
+						-->{{ i.description.length > 100 ? '...' : '' }}<!--
+					--></small>
+				</div>
+				<div class="col-xs-3 col-sm-4">
+					<div class="row">
+						<div class="col-sm-6">
+							<button class="btn btn-default btn-block home-list-btn-edit" ng-click="homeCtrl.editTask(i)">
+								<i class="glyphicon glyphicon-pencil"></i>
+								<span class="hidden-xs">Edit</span>
+							</button>
+						</div>
+						<div class="col-sm-6">
+							<button class="btn btn-success btn-block home-list-btn-remove" ng-click="homeCtrl.removeTask(i)">
+								<i class="glyphicon glyphicon-ok"></i>
+								<span class="hidden-xs">Done</span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>

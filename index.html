@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ToDo</title>
+	
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="static/style.css">
+</head>
+<body ng-app="todoApp">
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div id="nav" class="text-center">
+				<a id="nav-link" href="#about">TODO</a>
+			</div>
+		</div>
+	</div>
+	
+	<div id="main-container">
+		<div ng-view></div>
+	</div>
+	
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-route.js"></script>
+	
+	<script src="static/script.js"></script>
+	<script src="home/home.js"></script>
+	<script src="edit/edit.js"></script>
+	<script src="about/about.js"></script>
+</body>
+</html>

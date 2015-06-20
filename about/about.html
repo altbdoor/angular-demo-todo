@@ -1,0 +1,20 @@
+<div id="about" class="container" ng-controller="aboutController as aboutCtrl">
+	<p>Just a demonstration of sorts with a to-do list, to try out Angular JS.</p>
+	
+	<p>It is a very, <i>very</i> basic to-do list, with only simple title and description. All data is stored with <code>localStorage</code>, which will take up space on your browser. No information whatsover is sent to anywhere.</p>
+	
+	<p>Developed with:</p>
+	
+	<ul>
+		<li><a href="http://getbootstrap.com/">Bootstrap 3.3.5</a></li>
+		<li><a href="http://angularjs.org/">AngularJS 1.3.15</a></li>
+		<li><a href="https://github.com/pamelafox/lscache">lscache</a></li>
+	</ul>
+	
+	<p>
+		<a href="#home" class="btn btn-default">Return</a>
+		<button class="btn btn-default" ng-click="aboutCtrl.empty()">
+			Remove All Tasks ({{ aboutCtrl.taskCount }})
+		</button>
+	</p>
+</div>
